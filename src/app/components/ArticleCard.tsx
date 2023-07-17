@@ -1,6 +1,11 @@
 import React from "react";
+import { Article } from "../types";
 
-const ArticleCard = () => {
+type ArticleCardProps = {
+  article: Article;
+};
+
+const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <div>
       <article className="flex flex-col shadow my-4">
@@ -14,23 +19,25 @@ const ArticleCard = () => {
           >
             Technology
           </a>
-          <a href="#" className="text-3xl font-bold hover:text-gray-700 pb-4">
-            Lorem Ipsum Dolor Sit Amet Dolor Sit Amet
+          <a
+            href="#"
+            className="text-slate-900 text-3xl font-bold hover:text-gray-700 pb-4"
+          >
+            {/* Next.js13. no-storeとno-cacheの違い */}
+            {article.title}
           </a>
-          <p className="text-sm pb-3">
+          <p className="text-sm pb-3 text-slate-900">
             By{" "}
             <a href="#" className="font-semibold hover:text-gray-800">
-              David Grzyb
+              {article.author}
             </a>
-            , Published on April 25th, 2020
+            , Published on {article.createdAt}
           </p>
-          <a href="#" className="pb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis
-            iaculis dui porta volutpat. In sit amet posuere magna..
+          <a href="#" className="pb-6 text-slate-900">
+            {article.content}
           </a>
-          <a href="#" className="uppercase text-gray-800 hover:text-black">
-            Continue Reading <i className="fas fa-arrow-right"></i>
+          <a href="#" className="uppercase text-pink-800 hover:text-black">
+            続きを読む <i className="fas fa-arrow-right"></i>
           </a>
         </div>
       </article>

@@ -4,19 +4,19 @@ export type Article = {
   content: string;
   slug: string;
   createdAt: string;
-  updatedAt: string;
+  author: string;
 };
 
-export type Comment = {
-  id: number;
-  body: string;
-  articleId: number;
-  createdAt: string;
-  updatedAt: string;
-  author: Author;
-};
+// export type Comment = {
+//   id: number;
+//   body: string;
+//   articleId: number;
+//   createdAt: string;
+//   updatedAt: string;
+//   author: Author;
+// };
 
-export type Author = {
-  name: string;
-  avatarUrl: string;
-};
+// export type Author = {
+//   name: string;
+//   avatarUrl: string;
+// };

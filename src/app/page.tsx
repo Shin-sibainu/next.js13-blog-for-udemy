@@ -1,11 +1,15 @@
 import Image from "next/image";
 import ArticleList from "./components/ArticleList";
+import { getAllArticles } from "@/pages/api/blogAPI";
 
-export default function Home() {
+export default async function Home() {
+  const articles = await getAllArticles();
+  // console.log(articles);
+
   return (
     <div className="md:flex">
       <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-        <ArticleList />
+        <ArticleList articles={articles} />
         <div className="flex items-center py-8">
           <a
             href="#"

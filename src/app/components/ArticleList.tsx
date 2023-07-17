@@ -1,7 +1,12 @@
 import React from "react";
 import ArticleCard from "./ArticleCard";
+import { Article } from "../types";
 
-const ArticleList = () => {
+type ArticleListProps = {
+  articles: Article[];
+};
+
+const ArticleList = ({ articles }: ArticleListProps) => {
   return (
     <div>
       {/* <article className="flex flex-col shadow my-4">
@@ -99,9 +104,12 @@ const ArticleList = () => {
           </a>
         </div>
       </article> */}
+      {articles.map((article: Article) => (
+        <ArticleCard key={article.id} article={article} />
+      ))}
+      {/* <ArticleCard />
       <ArticleCard />
-      <ArticleCard />
-      <ArticleCard />
+      <ArticleCard /> */}
     </div>
   );
 };
