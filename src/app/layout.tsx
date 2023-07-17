@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Next.js13 Blog",
@@ -19,7 +21,9 @@ export default function RootLayout({
       <head />
       <body className="container mx-auto bg-slate-700 text-slate-50">
         <Header />
-        <main>{children}</main>
+        <main>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </main>
         <Footer />
       </body>
     </html>

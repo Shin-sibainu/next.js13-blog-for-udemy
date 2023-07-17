@@ -1,5 +1,7 @@
 import React from "react";
 import { Article } from "../types";
+import Link from "next/link";
+import Image from "next/image";
 
 type ArticleCardProps = {
   article: Article;
@@ -9,9 +11,14 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <div>
       <article className="flex flex-col shadow my-4">
-        <a href="#" className="hover:opacity-75">
-          <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=1" />
-        </a>
+        <Link href={`articles/${article.slug}`} className="hover:opacity-75">
+          <Image
+            src={`https://source.unsplash.com/collection/1346951/1000x500?sig=${article.id}`}
+            width={1280}
+            height={300}
+            alt=""
+          />
+        </Link>
         <div className="bg-white flex flex-col justify-start p-6">
           <a
             href="#"
@@ -20,7 +27,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             Technology
           </a>
           <a
-            href="#"
+            href={`articles/${article.slug}`}
             className="text-slate-900 text-3xl font-bold hover:text-gray-700 pb-4"
           >
             {/* Next.js13. no-storeとno-cacheの違い */}
@@ -36,9 +43,12 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           <a href="#" className="pb-6 text-slate-900">
             {article.content}
           </a>
-          <a href="#" className="uppercase text-pink-800 hover:text-black">
+          <Link
+            href={`articles/${article.slug}`}
+            className="uppercase text-pink-800 hover:text-black"
+          >
             続きを読む <i className="fas fa-arrow-right"></i>
-          </a>
+          </Link>
         </div>
       </article>
     </div>

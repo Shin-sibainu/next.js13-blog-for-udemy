@@ -12,7 +12,7 @@
       "id": 2,
       "title": "Next.js13. no-storeとno-cacheの違い",
       "content": "pages ディレクトリではページのルーティングはファイル名によって決まっていました。例えば pages/about.js というファイルは /about というパスに対応します。App Router ではルーティングに対応するファイルは page.js という固定の名前になります。/about というパスに対応するファイルは app/about/page.js という名前になるのです。page.js 以外にも共通されたレイアウトを担当する layout.js、ローディング UI を表示する loading.js などさまざまな特殊なファイルが存在します。",
-      "slug": "no-store/no-cache",
+      "slug": "no-store-and-no-cache",
       "createdAt": "2023-07-16",
       "author": "shincode"
     }
