@@ -38,3 +38,26 @@ export const getDetailArticle = async (id: string): Promise<Article> => {
   const article = await res.json();
   return article;
 };
+
+export const createArticle = async (
+  id: string,
+  title: string,
+  content: string
+): Promise<Article> => {
+  const res = await fetch(`${baseUrl}/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id, title, content }),
+  });
+
+  if (!res.ok) {
+    throw new Error("Faild to fetch article");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const newArticle = await res.json();
+  return newArticle;
+};

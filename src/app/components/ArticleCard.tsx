@@ -26,13 +26,13 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           >
             Technology
           </a>
-          <a
-            href={`articles/${article.slug}`}
+          <Link
+            href={`articles/${article.id}`}
             className="text-slate-900 text-3xl font-bold hover:text-gray-700 pb-4"
           >
             {/* Next.js13. no-storeとno-cacheの違い */}
             {article.title}
-          </a>
+          </Link>
           <p className="text-sm pb-3 text-slate-900">
             By{" "}
             <a href="#" className="font-semibold hover:text-gray-800">
@@ -40,11 +40,11 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             </a>
             , Published on {article.createdAt}
           </p>
-          <a href="#" className="pb-6 text-slate-900">
+          <Link href={`articles/${article.id}`} className="pb-6 text-slate-900">
             {article.content.substring(1, 70) + "..."}
-          </a>
+          </Link>
           <Link
-            href={`articles/${article.slug}`}
+            href={`articles/${article.id}`}
             className="uppercase text-pink-800 hover:text-black"
           >
             続きを読む <i className="fas fa-arrow-right"></i>

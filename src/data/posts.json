@@ -13,6 +13,11 @@
       "content": "pages ディレクトリではページのルーティングはファイル名によって決まっていました。例えば pages/about.js というファイルは /about というパスに対応します。App Router ではルーティングに対応するファイルは page.js という固定の名前になります。/about というパスに対応するファイルは app/about/page.js という名前になるのです。page.js 以外にも共通されたレイアウトを担当する layout.js、ローディング UI を表示する loading.js などさまざまな特殊なファイルが存在します。pages ディレクトリではページのルーティングはファイル名によって決まっていました。例えば pages/about.js というファイルは /about というパスに対応します。App Router ではルーティングに対応するファイルは page.js という固定の名前になります。/about というパスに対応するファイルは app/about/page.js という名前になるのです。page.js 以外にも共通されたレイアウトを担当する layout.js、ローディング UI を表示する loading.js などさまざまな特殊なファイルが存在します。pages ディレクトリではページのルーティングはファイル名によって決まっていました。例えば pages/about.js というファイルは /about というパスに対応します。App Router ではルーティングに対応するファイルは page.js という固定の名前になります。/about というパスに対応するファイルは app/about/page.js という名前になるのです。page.js 以外にも共通されたレイアウトを担当する layout.js、ローディング UI を表示する loading.js などさまざまな特殊なファイルが存在します。pages ディレクトリではページのルーティングはファイル名によって決まっていました。例えば pages/about.js というファイルは /about というパスに対応します。App Router ではルーティングに対応するファイルは page.js という固定の名前になります。/about というパスに対応するファイルは app/about/page.js という名前になるのです。page.js 以外にも共通されたレイアウトを担当する layout.js、ローディング UI を表示する loading.js などさまざまな特殊なファイルが存在します。pages ディレクトリではページのルーティングはファイル名によって決まっていました。例えば pages/about.js というファイルは /about というパスに対応します。App Router ではルーティングに対応するファイルは page.js という固定の名前になります。/about というパスに対応するファイルは app/about/page.js という名前になるのです。page.js 以外にも共通されたレイアウトを担当する layout.js、ローディング UI を表示する loading.js などさまざまな特殊なファイルが存在します。pages ディレクトリではページのルーティングはファイル名によって決まっていました。例えば pages/about.js というファイルは /about というパスに対応します。App Router ではルーティングに対応するファイルは page.js という固定の名前になります。/about というパスに対応するファイルは app/about/page.js という名前になるのです。page.js 以外にも共通されたレイアウトを担当する layout.js、ローディング UI を表示する loading.js などさまざまな特殊なファイルが存在します。",
       "createdAt": "2023-07-16",
       "author": "shincode"
+    },
+    {
+      "id": "test",
+      "title": "テスト投稿です。",
+      "content": "テスト"
     }
   ]
 }
