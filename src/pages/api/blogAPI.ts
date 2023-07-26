@@ -44,12 +44,14 @@ export const createArticle = async (
   title: string,
   content: string
 ): Promise<Article> => {
+  // 現在の日時を取得します。これはUTCの日時です。
+  const currentDatetime = new Date().toISOString();
   const res = await fetch(`${baseUrl}/posts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id, title, content }),
+    body: JSON.stringify({ id, title, content, createdAt: currentDatetime }),
   });
 
   if (!res.ok) {

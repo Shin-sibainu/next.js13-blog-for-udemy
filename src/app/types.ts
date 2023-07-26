@@ -3,7 +3,7 @@ export type Article = {
   title: string;
   content: string;
   slug: string;
-  createdAt: string;
+  createdAt: Date;
   author: string;
 };
 

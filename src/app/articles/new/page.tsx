@@ -19,6 +19,7 @@ const CreateArticle = () => {
 
     setLoading(false);
     router.push("/");
+    router.refresh();
   };
 
   return (

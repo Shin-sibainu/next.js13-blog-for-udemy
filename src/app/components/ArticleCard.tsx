@@ -34,14 +34,14 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             {article.title}
           </Link>
           <p className="text-sm pb-3 text-slate-900">
-            By{" "}
-            <a href="#" className="font-semibold hover:text-gray-800">
-              {article.author}
-            </a>
-            , Published on {article.createdAt}
+            Published on{" "}
+            {article.createdAt &&
+              new Date(article.createdAt).toLocaleDateString()}
           </p>
           <Link href={`articles/${article.id}`} className="pb-6 text-slate-900">
-            {article.content.substring(1, 70) + "..."}
+            {article.content.length > 70
+              ? article.content.substring(0, 70) + "..."
+              : article.content}
           </Link>
           <Link
             href={`articles/${article.id}`}
