@@ -13,16 +13,10 @@
       "createdAt": "2023-07-16"
     },
     {
-      "id": "ｗｗｗ",
-      "title": "ｗｗ",
-      "content": "ｗｗ",
-      "createdAt": "2023-07-22T07:40:46.678Z"
-    },
-    {
-      "id": "あああ",
-      "title": "あああ",
-      "content": "あああ",
-      "createdAt": "2023-07-22T07:50:29.327Z"
+      "id": "test",
+      "title": "test",
+      "content": "test",
+      "createdAt": "2023-07-31T07:03:46.953Z"
     }
   ]
 }
