@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 //   res: NextApiResponse
 // ) {}
 
-const baseUrl = "http://localhost:3001";
+// const baseUrl = "http://localhost:3001";
 
 // export const getAllArticles = async (): Promise<Article[]> => {
 //   const res = await fetch(`${baseUrl}/posts`, { cache: "no-store" }); //getserversideprops
@@ -81,44 +81,56 @@ const baseUrl = "http://localhost:3001";
 //   return deleteArticle;
 // };
 
-// すべての記事を取得
-export const getAllArticles = async (): Promise<Article[]> => {
-  const { data, error } = await supabase.from("posts").select("*");
+// export default async function handler(
+//   req: NextApiRequest,
+//   res: NextApiResponse
+// ) {
+//   const { data, error } = await supabase.from("posts").select("*");
 
-  if (error) throw error;
-  return data!;
-};
+//   if (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
 
-// 特定の記事を取得
-export const getDetailArticle = async (id: string): Promise<Article> => {
-  const { data, error } = await supabase
-    .from("posts")
-    .select("*")
-    .eq("id", id)
-    .single();
+//   res.status(200).json(data);
+// }
 
-  if (error) throw error;
-  if (!data) throw new Error("Not found");
-  return data;
-};
+// // すべての記事を取得
+// export const getAllArticles = async (): Promise<Article[]> => {
+//   let { data: posts, error } = await supabase.from("posts").select("*");
 
-// 記事を作成
-export const createArticle = async (
-  id: string,
-  title: string,
-  content: string
-): Promise<Article> => {
-  const { data, error } = await supabase
-    .from("posts")
-    .insert([{ id, title, content, createdAt: new Date().toISOString() }]);
+//   if (error) throw error;
+//   return posts!;
+// };
 
-  if (error) throw error;
-  return data![0];
-};
+// // 特定の記事を取得
+// export const getDetailArticle = async (id: string): Promise<Article> => {
+//   const { data, error } = await supabase
+//     .from("posts")
+//     .select("*")
+//     .eq("id", id)
+//     .single();
 
-// 記事を削除
-export const deleteArticle = async (id: string): Promise<void> => {
-  const { error } = await supabase.from("posts").delete().eq("id", id);
+//   if (error) throw error;
+//   if (!data) throw new Error("Not found");
+//   return data;
+// };
+// // 記事を作成
+// export const createArticle = async (
+//   id: string,
+//   title: string,
+//   content: string
+// ): Promise<Article> => {
+//   const { data, error } = await supabase
+//     .from("posts")
+//     .insert([{ id, title, content, createdAt: new Date().toISOString() }]);
 
-  if (error) throw error;
-};
+//   if (error) throw error;
+//   return data![0];
+// };
+
+// // 記事を削除
+// export const deleteArticle = async (id: string): Promise<void> => {
+//   const { error } = await supabase.from("posts").delete().eq("id", id);
+
+//   if (error) throw error;
+// };

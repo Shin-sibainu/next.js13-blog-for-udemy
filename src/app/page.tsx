@@ -1,10 +1,15 @@
 import Image from "next/image";
 import ArticleList from "./components/ArticleList";
-import { getAllArticles } from "@/pages/api/blogAPI";
+// import { getAllArticles } from "@/pages/api/blogAPI";
 
 export default async function Home() {
-  const articles = await getAllArticles();
+  // const articles = await getAllArticles();
   // console.log(articles);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  const res = await fetch(`${API_URL}/api/articles`, { cache: "no-store" });
+
+  const articles = await res.json();
 
   return (
     <div className="md:flex">

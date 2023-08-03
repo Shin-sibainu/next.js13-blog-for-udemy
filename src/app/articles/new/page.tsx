@@ -1,6 +1,6 @@
 "use client";
 
-import { createArticle } from "@/pages/api/blogAPI";
+// import { createArticle } from "@/pages/api/articles/articles";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -15,7 +15,14 @@ const CreateArticle = () => {
     e.preventDefault();
     setLoading(true);
 
-    await createArticle(id, title, content);
+    // await createArticle(id, title, content);
+    await fetch("/api/articles/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id, title, content }),
+    });
 
     setLoading(false);
     router.push("/");
