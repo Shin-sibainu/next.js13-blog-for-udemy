@@ -11,12 +11,14 @@ const CreateArticle = () => {
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
     // await createArticle(id, title, content);
-    await fetch("/api/articles/create", {
+    await fetch(`${API_URL}/api/articles/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
