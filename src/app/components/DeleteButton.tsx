@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteArticle } from "@/pages/api/articles/articles";
+// import { deleteArticle } from "@/pages/api/articles/articles";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -12,9 +12,15 @@ const DeleteButton = ({ id }: DeleteButtonProps) => {
   const router = useRouter();
 
   const handleDelete = async () => {
-    console.log(id);
+    // console.log(id);
 
-    await deleteArticle(id);
+    // await deleteArticle(id);
+
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+    const res = await fetch(`${API_URL}/api/articles/${id}`, {
+      method: "DELETE",
+    });
 
     router.push("/");
     router.refresh();

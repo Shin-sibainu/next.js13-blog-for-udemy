@@ -1,5 +1,5 @@
 import DeleteButton from "@/app/components/DeleteButton";
-import { deleteArticle, getDetailArticle } from "@/pages/api/articles/articles";
+// import { deleteArticle, getDetailArticle } from "@/pages/api/articles/articles";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -8,7 +8,15 @@ export default async function Article({
 }: {
   params: { slug: string };
 }) {
-  const detailArticle = await getDetailArticle(params.slug);
+  // const detailArticle = await getDetailArticle(params.slug);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  const res = await fetch(`${API_URL}/api/articles/${params.slug}`, {
+    next: {
+      revalidate: 10,
+    },
+  });
+  const detailArticle = await res.json();
 
   return (
     <div className="max-w-3xl mx-auto p-5">
