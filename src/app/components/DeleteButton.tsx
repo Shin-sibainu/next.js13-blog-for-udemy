@@ -18,7 +18,7 @@ const DeleteButton = ({ id }: DeleteButtonProps) => {
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-    const res = await fetch(`${API_URL}/api/articles/${id}`, {
+    const res = await fetch(`${API_URL}/api/${id}`, {
       method: "DELETE",
     });
 

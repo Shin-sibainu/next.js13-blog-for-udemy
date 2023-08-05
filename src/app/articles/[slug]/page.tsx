@@ -11,7 +11,7 @@ export default async function Article({
   // const detailArticle = await getDetailArticle(params.slug);
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-  const res = await fetch(`${API_URL}/api/articles/${params.slug}`, {
+  const res = await fetch(`${API_URL}/api/${params.slug}`, {
     next: {
       revalidate: 10,
     },

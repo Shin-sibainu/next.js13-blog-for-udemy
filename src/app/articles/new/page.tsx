@@ -18,7 +18,7 @@ const CreateArticle = () => {
     setLoading(true);
 
     // await createArticle(id, title, content);
-    await fetch(`${API_URL}/api/articles/create`, {
+    await fetch(`${API_URL}/api/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
