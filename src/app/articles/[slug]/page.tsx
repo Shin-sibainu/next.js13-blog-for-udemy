@@ -1,7 +1,6 @@
 import DeleteButton from "@/app/components/DeleteButton";
 // import { deleteArticle, getDetailArticle } from "@/pages/api/articles/articles";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default async function Article({
   params,

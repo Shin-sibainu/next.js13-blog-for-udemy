@@ -22,6 +22,8 @@ const DeleteButton = ({ id }: DeleteButtonProps) => {
       method: "DELETE",
     });
 
+    console.log(res)
+
     router.push("/");
     router.refresh();
   };
