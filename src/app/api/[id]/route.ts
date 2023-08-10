@@ -65,16 +65,16 @@ export async function DELETE(req: Request, res: Response) {
 }
 
 // POST handler
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
-  const { id, title, content } = req.body;
+// export async function POST(req: NextApiRequest, res: NextApiResponse) {
+//   const { id, title, content } = req.body;
 
-  const { data, error } = await supabase
-    .from("posts")
-    .insert([{ id, title, content, created_at: new Date().toISOString() }]);
+//   const { data, error } = await supabase
+//     .from("posts")
+//     .insert([{ id, title, content, created_at: new Date().toISOString() }]);
 
-  if (error) {
-    return res.status(500).json({ error: error.message });
-  }
+//   if (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
 
-  return NextResponse.json(data);
-}
+//   return NextResponse.json(data);
+// }
